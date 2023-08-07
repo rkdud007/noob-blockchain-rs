@@ -1,5 +1,7 @@
 use starknet::core::{crypto::compute_hash_on_elements, types::FieldElement};
 
+use crate::transaction::Transaction;
+
 #[derive(Debug, Clone)]
 pub struct BlockHeader {
     pub parent_block_hash: FieldElement,
@@ -64,5 +66,5 @@ impl BlockHeader {
 #[derive(Debug, Clone)]
 pub struct Block {
     pub header: BlockHeader,
-    pub transactions: Vec<FieldElement>,
+    pub transactions: Vec<Transaction>,
 }

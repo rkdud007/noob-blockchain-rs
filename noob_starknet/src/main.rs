@@ -3,6 +3,7 @@ use chrono::Utc;
 use starknet::core::types::FieldElement;
 
 pub mod block;
+pub mod transaction;
 
 fn create_genesis_block() -> Block {
     Block {
@@ -50,7 +51,17 @@ fn create_new_block(prev_block: &Block, data: String) -> Block {
         gas_price,
     );
 
-    let transactions = vec![];
+    let transactions = vec![transaction::Transaction::Invoke(
+        transaction::InvokeTransaction {
+            status: transaction::TransactionStatus::AcceptedOnL2,
+            sender: FieldElement::ZERO,
+            call_data: vec![FieldElement::ZERO],
+            version: FieldElement::ZERO,
+            nonce: FieldElement::ZERO,
+            max_fee: FieldElement::ZERO,
+            signature: vec![FieldElement::ZERO],
+        },
+    )];
 
     Block {
         header,
@@ -68,8 +79,10 @@ fn main() {
         let new_block_data = format!("Block #{} data.", i);
         let new_block = create_new_block(&prev_block, new_block_data);
         println!(
-            "Block #{} has been added to the blockchain!, {}",
-            new_block.header.block_number, new_block.header.block_timestamp
+            "Block #{} has been added to the blockchain!, {}, {:?}",
+            new_block.header.block_number,
+            new_block.header.block_timestamp,
+            new_block.transactions[0].clone()
         );
         println!("Hash: {}\n", new_block.header.hash());
         blockchain.push(new_block.clone());
