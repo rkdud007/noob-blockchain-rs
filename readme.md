@@ -7,15 +7,15 @@ I realized I'm noob... Just wanna implement some simple stuffs for learning purp
 - [x] Noob BlockChain
 
 - [ ] Noob Starknet
+
   - [x] Blockheader : [Starknet book](https://docs.starknet.io/documentation/architecture_and_concepts/Blocks/header/) block header
   - [x] Transaction Type : [Starknet book](https://docs.starknet.io/documentation/architecture_and_concepts/Blocks/transactions/) Invoke / Declare type
   - [x] Transaction Executor : `Blockifier` for execution
-  - [ ] JSON RPC server : To enable user to send tx
-  - [ ] State DB : [Starknet Book](https://docs.starknet.io/documentation/architecture_and_concepts/State/starknet-state/)
+  - [x] State DB : [Blockifier Simple DB implementation](https://github.com/starkware-libs/blockifier/blob/3c8ee7f541db035b49fcfb203aa85f8b0b6b42e5/crates/blockifier/src/test_utils.rs#L108)/extra references :
+        [Starknet Book](https://docs.starknet.io/documentation/architecture_and_concepts/State/starknet-state/), [Blockifier State implementation](https://github.com/starkware-libs/blockifier/blob/main/crates/blockifier/src/state/cached_state.rs), [Katana State implementation](https://github.com/dojoengine/dojo/blob/main/crates/katana/core/src/backend/state.rs)
   - [ ] Transaction Cycle
-    - [ ] The sequencer and executes **validate** of sent tx, If the transaction was valid, the **execute** function is called, charges the fee : `tx.execute in blockifier`
-    - [ ] If **execute** ran successfully, the sequencer includes the transaction in the block (Pending Block)
-    - [ ] Close the block and save in storage ( Finalized Block )
+    - [ ] Execute Transaction
+  - [ ] JSON RPC server : To enable user to send tx
 
 ### Reference
 
