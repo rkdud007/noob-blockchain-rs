@@ -3,6 +3,7 @@ use chrono::Utc;
 use starknet::core::types::FieldElement;
 
 pub mod block;
+pub mod executor;
 pub mod transaction;
 
 fn create_genesis_block() -> Block {

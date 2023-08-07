@@ -9,3 +9,5 @@ edition = "2021"
 chrono = "0.4.26"
 starknet = "0.5.0"
 starknet_api = "0.3.0"
+blockifier = { git = "https://github.com/starkware-libs/blockifier" }
+tracing = "0.1.37"
