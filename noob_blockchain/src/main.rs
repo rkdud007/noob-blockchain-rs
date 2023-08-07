@@ -1,9 +1,5 @@
-use chrono::{DateTime, Utc};
-use sha2::{Digest, Sha256};
-use starknet::{
-    core::{crypto::compute_hash_on_elements, types::FieldElement},
-    providers::sequencer::models::{ConfirmedTransactionReceipt, TransactionType},
-};
+use chrono::Utc;
+use starknet::core::{crypto::compute_hash_on_elements, types::FieldElement};
 
 #[derive(Debug, Clone)]
 struct BlockHeader {
