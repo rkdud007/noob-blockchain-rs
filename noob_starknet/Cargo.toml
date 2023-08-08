@@ -11,3 +11,5 @@ starknet = "0.5.0"
 starknet_api = "0.3.0"
 blockifier = { git = "https://github.com/starkware-libs/blockifier" }
 tracing = "0.1.37"
+serde_json = "1.0.104"
+lazy_static = "1.4.0"

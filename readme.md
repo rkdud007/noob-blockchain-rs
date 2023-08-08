@@ -21,6 +21,7 @@ I realized I'm noob... Just wanna implement some simple stuffs for learning purp
 
 - foundry
 - katana
+- blockifier
 - starknetbook
 
 ### Learning

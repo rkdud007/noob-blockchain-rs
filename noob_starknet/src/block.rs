@@ -1,6 +1,5 @@
+use blockifier::transaction::transaction_execution::Transaction as ExecutionTransaction;
 use starknet::core::{crypto::compute_hash_on_elements, types::FieldElement};
-
-use crate::transaction::Transaction;
 
 #[derive(Debug, Clone)]
 pub struct BlockHeader {
@@ -63,8 +62,8 @@ impl BlockHeader {
     }
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug)]
 pub struct Block {
     pub header: BlockHeader,
-    pub transactions: Vec<Transaction>,
+    pub transactions: Vec<ExecutionTransaction>,
 }
